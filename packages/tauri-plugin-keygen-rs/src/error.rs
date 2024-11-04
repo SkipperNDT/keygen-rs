@@ -21,6 +21,7 @@ pub enum Error {
 }
 
 #[derive(Debug, Serialize)]
+#[cfg_attr(feature = "specta", derive(specta::Type))]
 pub struct InvokeError {
     pub code: String,
     pub detail: String,

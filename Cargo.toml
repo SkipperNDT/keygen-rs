@@ -6,10 +6,7 @@ license = "MIT"
 edition = "2021"
 
 [workspace]
-members = [
-  ".",
-  "./packages/tauri-plugin-keygen-rs"
-]
+members = [".", "./packages/tauri-plugin-keygen-rs"]
 
 [dependencies]
 reqwest = { version = "0.11", features = ["json"] }
@@ -35,6 +32,13 @@ dotenv = "0.15.0"
 machine-uid = "0.5.1"
 aes-gcm = "0.9"
 log = { version = "0.4", features = ["std"] }
+specta = { version = "2.0.0-rc", features = [
+    "derive",
+    "chrono",
+], optional = true }
+
+[features]
+specta = ["dep:specta"]
 
 [lib]
 doctest = false
