@@ -50,6 +50,7 @@ pub(crate) struct LicenseAttributes {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[cfg_attr(feature = "specta", derive(specta::Type))]
 pub struct License {
     pub id: String,
     #[serde(skip_serializing)]
